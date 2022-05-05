@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nested iframe test</title>
+  <style>
+    body { background: #ddd; margin: 1rem; font-family: monospace; }
+    iframe { width: 100%; }
+  </style>
+  <script src="iframe-sizer.js"></script>
+</head>
+<body>
+  <h1>Main Page</h1>
+  <p>This is the main page!</p>
+  <iframe
+    id='nested-content'
+    src="nested-content.html"
+  ></iframe>
+  <p>
+    This is after the nested content.
+  </p>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      window.dringtech.resizeListenerFactory('nested-content');
+    })
+  </script>
+</body>
+</html>
